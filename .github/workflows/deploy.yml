@@ -23,6 +23,7 @@ jobs:
         server-dir: ./public_html/
         log-level: verbose
         dangerous-clean-slate: true
+        dry-run: true
         exclude: |
           **/.git*
           **/.git*/**
