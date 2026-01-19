@@ -110,28 +110,6 @@
             @apply hover:text-green-400;
         }
     </style>
-    <script type="module">
-      // Your web app's Firebase configuration
-      const firebaseConfig = {
-        apiKey: "AIzaSyCsk_rPkygPlecoGn9QdjX_ypawxr2Q_AI",
-        authDomain: "rebelfrogstudioswebsite.firebaseapp.com",
-        projectId: "rebelfrogstudioswebsite",
-        storageBucket: "rebelfrogstudioswebsite.appspot.com",
-        messagingSenderId: "706223401666",
-        appId: "1:706223401666:web:e5c35ea5036c9e1ec3a95b",
-        measurementId: "G-T3RZ4VD0EK"
-      };
-
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-      import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      window.db = getFirestore(app); // Make db globally accessible
-      window.getDoc = getDoc;
-      window.doc = doc;
-    </script>
 </head>
 <body class="text-dark-text antialiased">
 
@@ -160,7 +138,7 @@
                     <div class="flex items-center gap-6">
                         <div class="text-right text-sm text-dark-text-secondary hidden lg:block">
                             <div>(425) 681-0861</div>
-                            <div>rebelfrogstudios@gmail.com</div>
+                            <div>DeanM@RebelFrog.Tech</div>
                         </div>
                         <a href="/contact" class="bg-primary text-white px-6 py-2 rounded-md hover:bg-green-700 transition-colors duration-200 shadow-lg">Contact</a>
                     </div>
@@ -382,31 +360,27 @@
             loadPage(path);
         });
 
-        async function loadEconomicUpdates() {
+        function loadEconomicUpdates() {
             const tickerInner = document.getElementById('economic-ticker-inner');
             if (!tickerInner) return;
 
-            try {
-                const docRef = window.doc(window.db, "market_intelligence", "latest");
-                const docSnap = await window.getDoc(docRef);
+            const updates = [
+                "NFIB Optimism Index: Placeholder Headline 1",
+                "SBA News: Placeholder Funding Opportunity",
+                "Economic Trend: Global markets stabilizing"
+            ];
+            
+            const tickerContent = updates.map(text => `<span>${text}</span>`).join('');
+            tickerInner.innerHTML = tickerContent + tickerContent;
 
-                if (docSnap.exists()) {
-                    const data = docSnap.data();
-                    const updates = data.updates.map(u => `${u.category}: ${u.value} (${u.trend}) - ${u.insight}`) || [];
-                    const tickerContent = updates.map(text => `<span>${text}</span>`).join('');
-                    tickerInner.innerHTML = tickerContent + tickerContent;
-                } else {
-                    console.log("No such document!");
-                    tickerInner.innerHTML = '<span>No economic updates available.</span>';
-                }
-            } catch (error) {
-                console.error('Failed to load economic updates from Firestore:', error);
-                tickerInner.innerHTML = '<span>Failed to load updates. Please check back later.</span>';
-            }
+            // Force animation restart after content is loaded
+            tickerInner.style.animation = 'none';
+            tickerInner.offsetHeight; /* trigger reflow */
+            tickerInner.style.animation = '';
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            loadEconomicUpdates(); // Load the new ticker data
+            loadEconomicUpdates();
             const shareButton = document.getElementById('share-button');
             const shareDropdown = document.getElementById('share-dropdown');
             const copyLinkButton = document.getElementById('copy-link-button');
@@ -414,9 +388,6 @@
             const closeMenuButton = document.getElementById('close-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
 
-            // --- Event Listeners ---
-
-            // Hamburger Menu
             hamburgerButton.addEventListener('click', () => {
                 mobileMenu.classList.remove('hidden');
             });
@@ -424,19 +395,15 @@
                 mobileMenu.classList.add('hidden');
             });
 
-            // Global Click Handler
             document.body.addEventListener('click', e => {
                 const link = e.target.closest('a');
 
-                // Close share dropdown if click is outside
-                if (!shareDropdown.contains(e.target) && !shareButton.contains(e.target)) {
+                if (shareDropdown && !shareDropdown.contains(e.target) && !shareButton.contains(e.target)) {
                     shareDropdown.classList.add('hidden');
                 }
 
-                // Handle link clicks
                 if (link) {
-                    // Close mobile menu when a link inside it is clicked
-                    if (mobileMenu.contains(link)) {
+                    if (mobileMenu && mobileMenu.contains(link)) {
                         mobileMenu.classList.add('hidden');
                     }
 
@@ -445,23 +412,21 @@
                     const hasTargetBlank = link.target === '_blank';
 
                     if (isExternal || hasTargetBlank) {
-                        return; // Let browser handle it
+                        return;
                     }
 
                     if (href && href.startsWith('/')) {
-                        router(e); // Use internal router
+                        router(e);
                     }
                 }
             });
             
-            // Share Button
             shareButton.addEventListener('click', (e) => {
                 e.stopPropagation();
                 setupShareLinks();
                 shareWebsite();
             });
 
-            // Copy Link Button
             copyLinkButton.addEventListener('click', (e) => {
                 e.stopPropagation();
                 navigator.clipboard.writeText(window.location.href).then(() => {
@@ -473,7 +438,6 @@
                 }).catch(console.error);
             });
 
-            // Initial Page Load
             const initialPath = window.location.pathname;
             loadPage(routes[initialPath] ? initialPath : '/404');
         });

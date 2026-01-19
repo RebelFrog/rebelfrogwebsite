@@ -13,7 +13,7 @@ Our free consultation is a genuine business diagnostic. We ask questions about y
 ### Contact Information
 - **Address:** 170 8th Court, Vero Beach Florida, 32962
 - **Phone:** (425)681-0861
-- **Email:** rebelfrogstudios@gmail.com
+- **Email:** DeanM@RebelFrog.Tech
 
 <a href="https://rebelfrog.tech/schedule-calendar" target="_blank" rel="noopener noreferrer">**Schedule Your Free Consultation Here!**</a>
 
