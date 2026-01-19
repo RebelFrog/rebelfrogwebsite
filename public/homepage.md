@@ -39,7 +39,7 @@ These aren't just inconveniences—they're profit killers.
 
 ## Real Results: Manufacturing Turnaround
 
-**The Challenge:** A manufacturer of industrial power washing equipment was on track to exceed $1M in revenue—but operating at a loss.
+The Challenge: A Florida Manufacturer was on track to exceed $1M in revenus, but operating at a loss.
 
 **What We Found:**
 - No inventory control system—purchasing was based on gut feeling.
@@ -96,4 +96,4 @@ You didn't build your business to watch it struggle. You're ready for change—y
 
 Schedule a free business diagnostic. No sales pitch. No pressure. Just an honest conversation about what's holding you back and how to fix it.
 
-**[CTA Button: Schedule Your Free Diagnostic Consultation]**
+<a href="https://rebelfrog.tech/schedule-calendar" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-3 bg-primary text-white font-bold rounded-md hover:bg-green-700 transition-colors duration-200 shadow-lg transform hover:scale-105">Schedule A Free 30 Min Consult</a>

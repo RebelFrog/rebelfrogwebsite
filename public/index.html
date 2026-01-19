@@ -1,11 +1,482 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" id="meta-description" content="Rebel Frog Studios: Modernization Architects specializing in AI automation, business process optimization, and fractional CTO services.">
     <title>Rebel Frog Studios</title>
-  </head>
-  <body>
-    <h1>Welcome to Rebel Frog Studios!</h1>
-    <p>Your Firebase hosting is set up correctly.</p>
-  </body>
+    <link rel="canonical" id="canonical-link" href="https://rebelfrogstudioswebsite.web.app">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Roboto Mono', 'monospace'],
+                    },
+                    colors: {
+                        'primary': {
+                            'DEFAULT': '#16a34a',
+                            '500': '#22c55e',
+                            '600': '#16a34a',
+                            '700': '#15803d',
+                        },
+                        'dark-bg': '#0a0a0a',
+                        'dark-card': '#1a1a1a',
+                        'dark-text': '#a3a3a3',
+                        'dark-text-secondary': '#737373',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-image: url('/Gemini_background.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(10, 10, 10, 0.85); /* Dark overlay */
+            z-index: -1;
+        }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s, transform 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s; }
+        .is-visible { opacity: 1; transform: translateY(0); }
+        
+        .scrolling-banner {
+            overflow: hidden;
+            white-space: nowrap;
+            background-color: #1a1a1a;
+            padding: 1rem 0;
+            border-top: 1px solid #2a2a2a;
+            border-bottom: 1px solid #2a2a2a;
+        }
+        .scrolling-banner-inner {
+            display: inline-block;
+            -webkit-animation: scroll-left 40s linear infinite;
+            animation: scroll-left 40s linear infinite;
+        }
+        .scrolling-banner-inner span {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 500;
+            font-size: 1.25rem;
+            color: #a3a3a3;
+            margin: 0 2rem;
+            text-transform: uppercase;
+        }
+        @-webkit-keyframes scroll-left {
+            0% { -webkit-transform: translateX(0); transform: translateX(0); }
+            100% { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+        }
+        @keyframes scroll-left {
+            0% { -webkit-transform: translateX(0); transform: translateX(0); }
+            100% { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+        }
+
+        /* Definitive styles for the typography plugin's dark mode */
+        .prose-invert {
+            --tw-prose-body: #a3a3a3;
+            --tw-prose-headings: #ffffff;
+            --tw-prose-lead: #a3a3a3;
+            --tw-prose-links: #16a34a;
+            --tw-prose-bold: #ffffff;
+            --tw-prose-counters: #a3a3a3;
+            --tw-prose-bullets: #737373;
+            --tw-prose-hr: #404040;
+            --tw-prose-quotes: #a3a3a3;
+            --tw-prose-quote-borders: #15803d;
+            --tw-prose-captions: #737373;
+            --tw-prose-code: #ffffff;
+            --tw-prose-pre-code: #d1d5db;
+            --tw-prose-pre-bg: #1f2937;
+            --tw-prose-th-borders: #404040;
+            --tw-prose-td-borders: #404040;
+        }
+        .prose-invert h1, .prose-invert h2, .prose-invert h3, .prose-invert h4 {
+            font-family: 'Roboto Mono', monospace;
+        }
+        .prose-invert a {
+            @apply hover:text-green-400;
+        }
+    </style>
+    <script type="module">
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCsk_rPkygPlecoGn9QdjX_ypawxr2Q_AI",
+        authDomain: "rebelfrogstudioswebsite.firebaseapp.com",
+        projectId: "rebelfrogstudioswebsite",
+        storageBucket: "rebelfrogstudioswebsite.appspot.com",
+        messagingSenderId: "706223401666",
+        appId: "1:706223401666:web:e5c35ea5036c9e1ec3a95b",
+        measurementId: "G-T3RZ4VD0EK"
+      };
+
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+      import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      window.db = getFirestore(app); // Make db globally accessible
+      window.getDoc = getDoc;
+      window.doc = doc;
+    </script>
+</head>
+<body class="text-dark-text antialiased">
+
+
+    <header class="bg-dark-bg/80 backdrop-blur-md sticky top-0 z-40 border-b border-gray-800">
+        <div class="container mx-auto px-6 lg:px-8">
+            <nav id="main-nav" class="flex justify-between items-center py-2">
+                <!-- Left Side: Logo and Title -->
+                <a href="/" class="flex items-center gap-3">
+                    <img src="/RBSlogo.png" alt="Rebel Frog Studios Logo" class="h-12 lg:h-24 transition-height duration-300">
+                    <span class="text-3xl lg:text-6xl font-bold text-white hover:text-primary transition-all duration-300 font-mono">Rebel Frog</span>
+                </a>
+
+                <!-- Desktop Nav & Info (Center and Right) -->
+                <div class="hidden md:flex items-center flex-grow">
+                    <!-- Center: Navigation Links -->
+                    <div class="flex-grow flex justify-center items-center gap-6 text-lg font-medium">
+                        <a href="/" class="text-dark-text hover:text-primary transition-colors duration-200">Home</a>
+                        <a href="/about" class="text-dark-text hover:text-primary transition-colors duration-200">About</a>
+                        <a href="/services" class="text-dark-text hover:text-primary transition-colors duration-200">Services</a>
+                        <a href="/projects" class="text-dark-text hover:text-primary transition-colors duration-200">Projects</a>
+                        <a href="/why-ai" class="text-dark-text hover:text-primary transition-colors duration-200">Why AI</a>
+                    </div>
+                    
+                    <!-- Right Side: Contact Info and Button -->
+                    <div class="flex items-center gap-6">
+                        <div class="text-right text-sm text-dark-text-secondary hidden lg:block">
+                            <div>(425) 681-0861</div>
+                            <div>rebelfrogstudios@gmail.com</div>
+                        </div>
+                        <a href="/contact" class="bg-primary text-white px-6 py-2 rounded-md hover:bg-green-700 transition-colors duration-200 shadow-lg">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Always visible Share Button & Mobile Hamburger Button -->
+                <div class="flex items-center gap-4">
+                    <!-- Share Button (always visible) -->
+                    <div class="relative">
+                        <button id="share-button" aria-label="Share this page" class="text-dark-text hover:text-primary transition-colors duration-200">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"></path></svg>
+                        </button>
+                        <div id="share-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-dark-card border border-gray-700 rounded-md shadow-lg z-50">
+                            <a href="#" id="share-twitter" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 text-sm text-dark-text hover:bg-gray-700">Share on Twitter</a>
+                            <a href="#" id="share-facebook" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 text-sm text-dark-text hover:bg-gray-700">Share on Facebook</a>
+                            <a href="#" id="share-linkedin" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 text-sm text-dark-text hover:bg-gray-700">Share on LinkedIn</a>
+                            <a href="#" id="share-reddit" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 text-sm text-dark-text hover:bg-gray-700">Share on Reddit</a>
+                            <a href="#" id="share-pinterest" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 text-sm text-dark-text hover:bg-gray-700">Share on Pinterest</a>
+                            <a href="#" id="share-whatsapp" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 text-sm text-dark-text hover:bg-gray-700">Share on WhatsApp</a>
+                            <a href="#" id="share-email" class="block px-4 py-2 text-sm text-dark-text hover:bg-gray-700">Share via Email</a>
+                            <button id="copy-link-button" class="block w-full text-left px-4 py-2 text-sm text-dark-text hover:bg-gray-700">Copy Link</button>
+                        </div>
+                    </div>
+                    <!-- Mobile Hamburger Button -->
+                    <div class="md:hidden">
+                        <button id="hamburger-button" class="text-white focus:outline-none">
+                            <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Economic Updates Ticker -->
+    <div class="bg-black text-green-500 font-mono border-t border-green-500 py-0">
+        <h3 class="text-sm font-bold tracking-wider mb-1 text-center py-2">ECONOMIC UPDATES</h3>
+        <div id="economic-ticker-container" class="scrolling-banner px-6" style="padding: 0.5rem 0; background-color: black;">
+            <div id="economic-ticker-inner" class="scrolling-banner-inner">
+                <!-- Content will be loaded by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Panel -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-dark-bg z-50">
+        <div class="flex justify-end p-6">
+            <button id="close-menu-button" class="text-white">
+                <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 18L18 6M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="flex flex-col items-center justify-center h-full -mt-16 text-3xl space-y-8">
+            <a href="/" class="text-dark-text hover:text-primary transition-colors duration-200">Home</a>
+            <a href="/about" class="text-dark-text hover:text-primary transition-colors duration-200">About</a>
+            <a href="/services" class="text-dark-text hover:text-primary transition-colors duration-200">Services</a>
+            <a href="/projects" class="text-dark-text hover:text-primary transition-colors duration-200">Projects</a>
+            <a href="/why-ai" class="text-dark-text hover:text-primary transition-colors duration-200">Why AI</a>
+            <a href="/contact" class="text-dark-text hover:text-primary transition-colors duration-200">Contact</a>
+        </div>
+    </div>
+
+    <div id="page-container"></div>
+    
+    <footer class="bg-dark-card text-dark-text-secondary mt-20 py-10 border-t border-gray-800">
+        <div class="container mx-auto px-6 lg:px-8 text-center">
+            <p class="text-lg mb-2 text-dark-text">Rebel Frog Studios &copy; 2021</p>
+            <p class="text-sm">Modernization Architects | Innovating for your future.</p>
+        </div>
+    </footer>
+
+    <script>
+        const pageContainer = document.getElementById('page-container');
+        const services = ["Business Coaching", "Distressed Asset Coaching", "Sale/Marketing Automation", "Workflow Automation", "Fractional CTO", "AI Integration", "Smart Websites", "AI Agents", "Data Integration Reports", "AI Lead Generation Engine", "Automated Marketing Asset Creation", "SEO Optimization"];
+
+        const routes = {
+            '/': { md: 'homepage.md', title: 'Rebel Frog Studios | Modernization Architects' },
+            '/about': { md: 'about.md', title: 'About Us | Rebel Frog Studios' },
+            '/services': { md: 'services.md', title: 'Our Services | Rebel Frog Studios' },
+            '/projects': { md: 'projects.md', title: 'Our Projects | Rebel Frog Studios' },
+            '/why-ai': { md: 'why-ai.md', title: 'Why AI? | Rebel Frog Studios' },
+            '/contact': { md: 'contact.md', title: 'Contact Us | Rebel Frog Studios' },
+            '/404': { md: '404.md', title: 'Page Not Found | Rebel Frog Studios' }
+        };
+
+        function updateMetaTags(title, description, path) {
+            document.title = title;
+            document.getElementById('meta-description').setAttribute('content', description);
+            document.getElementById('canonical-link').setAttribute('href', `https://rebelfrogstudioswebsite.web.app${path}`);
+        }
+
+        function loadPage(path) {
+            window.scrollTo(0, 0);
+            const route = routes[path] || routes['/404'];
+            
+            fetch(route.md)
+                .then(response => response.ok ? response.text() : Promise.reject('File not found'))
+                .then(text => {
+                    const parsedHtml = marked.parse(text);
+                    let contentHtml = '';
+
+                    // For SEO, extract title and description from the parsed HTML
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = parsedHtml;
+                    const pageTitle = tempDiv.querySelector('h1')?.textContent || route.title;
+                    const pageDescription = tempDiv.querySelector('p')?.textContent.substring(0, 155) || 'Rebel Frog Studios: Modernization Architects.';
+                    updateMetaTags(pageTitle, pageDescription, path);
+
+                    if (path === '/') {
+                        contentHtml = `
+                            <div class="relative h-[70vh] flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('/rebelfroglab.webp'); mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);">
+                                <div class="absolute inset-0 bg-black/80"></div>
+                                <div class="relative z-10 fade-in">
+                                    <h1 class="text-4xl md:text-7xl font-extrabold text-white font-mono leading-tight">Modernization Architects</h1>
+                                    <p class="text-xl md:text-2xl mt-4 max-w-3xl mx-auto text-gray-300">Pioneering 30 Years of Technical Business Leadership & Innovation</p>
+                                    <p class="text-xl md:text-2xl mt-2 max-w-3xl mx-auto text-gray-300">Run Your Small Business Like a Big Brand!</p>
+                                    <a href="https://rebelfrog.tech/schedule-calendar" target="_blank" rel="noopener noreferrer" class="mt-8 inline-block bg-primary text-white hover:bg-green-700 px-8 py-3 rounded-md text-lg font-semibold shadow-lg transform hover:scale-105 transition-all duration-300">Schedule a Diagnostic</a>
+                                </div>
+                            </div>
+                            <div class="scrolling-banner">
+                                <div class="scrolling-banner-inner">
+                                    ${services.map(s => `<span>${s}</span>`).join('')}
+                                    ${services.map(s => `<span>${s}</span>`).join('')}
+                                </div>
+                            </div>
+                            <main class="container mx-auto px-6 lg:px-8 py-16">
+                                <div class="bg-dark-card p-8 sm:p-12 rounded-lg shadow-2xl fade-in max-w-4xl mx-auto prose prose-invert md:prose-lg">
+                                    ${parsedHtml}
+                                </div>
+                            </main>
+                        `;
+                    } else {
+                        contentHtml = `
+                            <main class="container mx-auto px-6 lg:px-8 py-16">
+                                <div class="bg-dark-card p-8 sm:p-12 rounded-lg shadow-2xl fade-in max-w-4xl mx-auto prose prose-invert md:prose-lg">
+                                    ${parsedHtml}
+                                </div>
+                            </main>
+                        `;
+                    }
+                    pageContainer.innerHTML = contentHtml;
+                    observeElements();
+                })
+                .catch(error => {
+                    console.error("Failed to load page:", error);
+                    if (path !== '/404') {
+                        router('/404');
+                    }
+                });
+        }
+
+        function router(eventOrPath) {
+            let path;
+            if (typeof eventOrPath === 'string') {
+                path = eventOrPath;
+            } else {
+                eventOrPath.preventDefault();
+                path = eventOrPath.target.closest('a').getAttribute('href');
+            }
+
+            if (window.location.pathname !== path) {
+                history.pushState({ path }, '', path);
+                loadPage(path);
+            }
+        }
+
+        function observeElements() {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const isInitiallyVisible = (rect.top < window.innerHeight && rect.bottom > 0 && rect.left < window.innerWidth && rect.right > 0);
+                if (isInitiallyVisible) {
+                    el.classList.add('is-visible');
+                } else {
+                    observer.observe(el);
+                }
+            });
+        }
+
+        function shareWebsite() {
+            const shareData = {
+                title: document.title,
+                text: document.getElementById('meta-description').content,
+                url: window.location.href
+            };
+            if (navigator.share) {
+                navigator.share(shareData).catch(console.error);
+            } else {
+                document.getElementById('share-dropdown').classList.toggle('hidden');
+            }
+        }
+
+        function setupShareLinks() {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            const text = encodeURIComponent(document.getElementById('meta-description').content);
+
+            document.getElementById('share-twitter').href = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+            document.getElementById('share-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+            document.getElementById('share-linkedin').href = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}`;
+            document.getElementById('share-reddit').href = `https://www.reddit.com/submit?url=${url}&title=${title}`;
+            document.getElementById('share-pinterest').href = `https://pinterest.com/pin/create/button/?url=${url}&media=&description=${text}`;
+            document.getElementById('share-whatsapp').href = `https://api.whatsapp.com/send?text=${title}%20${url}`;
+            document.getElementById('share-email').href = `mailto:?subject=${title}&body=${text}`;
+        }
+
+        window.addEventListener('popstate', (event) => {
+            const path = event.state?.path || window.location.pathname;
+            loadPage(path);
+        });
+
+        async function loadEconomicUpdates() {
+            const tickerInner = document.getElementById('economic-ticker-inner');
+            if (!tickerInner) return;
+
+            try {
+                const docRef = window.doc(window.db, "market_intelligence", "latest");
+                const docSnap = await window.getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    const updates = data.updates.map(u => `${u.category}: ${u.value} (${u.trend}) - ${u.insight}`) || [];
+                    const tickerContent = updates.map(text => `<span>${text}</span>`).join('');
+                    tickerInner.innerHTML = tickerContent + tickerContent;
+                } else {
+                    console.log("No such document!");
+                    tickerInner.innerHTML = '<span>No economic updates available.</span>';
+                }
+            } catch (error) {
+                console.error('Failed to load economic updates from Firestore:', error);
+                tickerInner.innerHTML = '<span>Failed to load updates. Please check back later.</span>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadEconomicUpdates(); // Load the new ticker data
+            const shareButton = document.getElementById('share-button');
+            const shareDropdown = document.getElementById('share-dropdown');
+            const copyLinkButton = document.getElementById('copy-link-button');
+            const hamburgerButton = document.getElementById('hamburger-button');
+            const closeMenuButton = document.getElementById('close-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // --- Event Listeners ---
+
+            // Hamburger Menu
+            hamburgerButton.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+            });
+            closeMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+
+            // Global Click Handler
+            document.body.addEventListener('click', e => {
+                const link = e.target.closest('a');
+
+                // Close share dropdown if click is outside
+                if (!shareDropdown.contains(e.target) && !shareButton.contains(e.target)) {
+                    shareDropdown.classList.add('hidden');
+                }
+
+                // Handle link clicks
+                if (link) {
+                    // Close mobile menu when a link inside it is clicked
+                    if (mobileMenu.contains(link)) {
+                        mobileMenu.classList.add('hidden');
+                    }
+
+                    const href = link.getAttribute('href');
+                    const isExternal = href && href.startsWith('http');
+                    const hasTargetBlank = link.target === '_blank';
+
+                    if (isExternal || hasTargetBlank) {
+                        return; // Let browser handle it
+                    }
+
+                    if (href && href.startsWith('/')) {
+                        router(e); // Use internal router
+                    }
+                }
+            });
+            
+            // Share Button
+            shareButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                setupShareLinks();
+                shareWebsite();
+            });
+
+            // Copy Link Button
+            copyLinkButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    copyLinkButton.textContent = 'Copied!';
+                    setTimeout(() => {
+                        copyLinkButton.textContent = 'Copy Link';
+                        shareDropdown.classList.add('hidden');
+                    }, 1000);
+                }).catch(console.error);
+            });
+
+            // Initial Page Load
+            const initialPath = window.location.pathname;
+            loadPage(routes[initialPath] ? initialPath : '/404');
+        });
+    </script>
+</body>
 </html>

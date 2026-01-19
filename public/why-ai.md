@@ -1,3 +1,7 @@
+<div class="my-8 text-center">
+    <img src="/AIInYourHands.jpg" alt="AI in Your Hands" class="max-w-4xl mx-auto w-full rounded-lg shadow-lg" style="mask-image: radial-gradient(circle, black 70%, transparent 100%);">
+</div>
+
 # AI Isn't Magic. But Strategic AI Implementation Is Transformative.
 
 You've heard the hype. AI is going to change everything. Replace workers. Revolutionize industries. Solve all your problems.
@@ -5,6 +9,10 @@ You've heard the hype. AI is going to change everything. Replace workers. Revolu
 Here's the truth: **AI is a tool.** Like any tool, its value depends entirely on how you use it.
 
 The question isn't "Should I use AI?" It's "How can AI solve specific problems in my business?" That's what this page is about—cutting through the noise and showing you practical, profitable AI applications.
+
+<div class="my-6 text-center">
+<a href="https://rebelfrog.tech/schedule-calendar" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-3 bg-primary text-white font-bold rounded-md hover:bg-green-700 transition-colors duration-200 shadow-lg transform hover:scale-105">Schedule A Free 30 Min AI Intro Training Session</a>
+</div>
 
 ---
 
@@ -84,4 +92,4 @@ The result is AI that actually transforms your business because it's solving the
 
 Let's have a conversation about your specific challenges and goals. We'll show you exactly how AI can drive measurable results in your operation—no hype, no overselling, just practical solutions.
 
-**[CTA Button: Schedule Your Free AI Strategy Session]**
+

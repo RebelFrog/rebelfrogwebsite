@@ -1,3 +1,20 @@
+<!-- Florida Community Commitment Section -->
+# **Our Community Commitment: Standing with Florida’s Small Businesses**
+
+<div class="my-8 text-center">
+    <img src="/Floridapic2.png" alt="Florida Community" class="max-w-4xl mx-auto w-full rounded-lg shadow-lg" style="mask-image: radial-gradient(circle, black 70%, transparent 100%);">
+</div>
+
+"Rebel Frog is more than a consulting firm; it’s a neighbor. I live and work right here in Florida, and I see the challenges our local business owners are facing every day. From the rising costs of goods to the struggle of finding and keeping reliable people, the current economic climate is putting an immense weight on the families that power our state. I believe that 30 years of enterprise-level expertise shouldn't only be available to the 'big guys' with unlimited budgets. If you are a Florida small business owner trying to navigate these tough times, please know that I am committed to helping my community and our state thrive. Whether it’s finding a more affordable way to automate your daily headaches or simply offering a strategic path to protect your margins, we will find a way to work together. In this family, we don't just look at spreadsheets—we look out for one another."
+
+As a measure of good faith to my Florida small business owners, I will commit to helping you at a rate that you can afford. We will find way to improve your business at a budget you can start with and grow together!
+
+<div class="my-6 text-center">
+<a href="https://rebelfrog.tech/schedule-calendar" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-3 bg-primary text-white font-bold rounded-md hover:bg-green-700 transition-colors duration-200 shadow-lg transform hover:scale-105">Schedule A Free 30 Min Consult</a>
+</div>
+
+---
+
 # Services Designed to Transform, Not Just Optimize
 
 We offer two core service tracks that work independently or together: Business Transformation Consulting for companies with fundamental operational challenges, and AI-Powered Automation for businesses ready to modernize their technology stack. Both are backed by 30+ years of executive leadership and enterprise technology experience.
@@ -166,4 +183,4 @@ Strategic technology consulting and implementation for businesses with outdated 
 - Better data accuracy and integrity
 - Scalable technology foundation
 
-**Investment:** Custom quotes based on scope, typically $10,000-$50,000+.
+**Investment:** Custom quotes based on scope, typically $1,000-$10,000+.

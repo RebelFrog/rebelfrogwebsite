@@ -1,5 +1,9 @@
 # About Rebel Frog Studios
 
+<div class="my-6 text-center">
+<a href="https://rebelfrog.tech/schedule-calendar" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-3 bg-primary text-white font-bold rounded-md hover:bg-green-700 transition-colors duration-200 shadow-lg transform hover:scale-105">Schedule A Free 30 Min Consult</a>
+</div>
+
 ## Founded by a CEO Who Built Companies, Not Just Consulted About Them
 
 Rebel Frog Studios exists because too many business consultants have never actually run a business. They understand theory. We understand reality.
@@ -13,6 +17,10 @@ This isn't academic knowledge. It's battle-tested expertise from someone who has
 ## Founder Story: Dean Mercier
 
 **Two-Time Founder | Category Creator | Technology Transformation Leader**
+
+<div class="my-8 text-center">
+    <img src="/Founder.jpg" alt="Dean Mercier, Founder" class="max-w-md mx-auto w-full rounded-lg shadow-lg" style="mask-image: radial-gradient(circle, black 70%, transparent 100%);">
+</div>
 
 ### The Entrepreneurial Journey: GAEMS Inc. (2011-2021)
 
@@ -93,5 +101,3 @@ This experience brings the ability to architect enterprise-level technology solu
 ## Work with Someone Who's Been in Your Shoes
 
 When you schedule a consultation with Rebel Frog Studios, you're not getting a sales pitch from a marketing agency. You're getting a strategic conversation with an experienced CEO who has built companies, scaled operations, and solved the exact challenges you're facing now.
-
-**[CTA Button: Schedule Your Free Consultation with Dean]**
