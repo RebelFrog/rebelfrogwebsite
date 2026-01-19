@@ -20,10 +20,9 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./public/
-        server-dir: ./public_html/
+        server-dir: /home/u405727349/domains/rebelfrog.tech/public_html/
         log-level: verbose
         dangerous-clean-slate: true
-        dry-run: true
         exclude: |
           **/.git*
           **/.git*/**
