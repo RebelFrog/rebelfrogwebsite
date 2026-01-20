@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -64,8 +64,12 @@
         }
         .scrolling-banner-inner {
             display: inline-block;
-            -webkit-animation: scroll-left 60s linear infinite;
-            animation: scroll-left 60s linear infinite;
+            -webkit-animation: scroll-left 30s linear infinite;
+            animation: scroll-left 30s linear infinite;
+        }
+        #lower-ticker-inner {
+            -webkit-animation: scroll-left 75s linear infinite;
+            animation: scroll-left 75s linear infinite;
         }
         .scrolling-banner-inner span {
             font-family: 'Roboto Mono', monospace;
@@ -292,7 +296,7 @@
                                 </div>
                             </div>
                             <div class="scrolling-banner">
-                                <div class="scrolling-banner-inner">
+                                <div id="lower-ticker-inner" class="scrolling-banner-inner">
                                     ${services.map(s => `<span>${s}</span>`).join('')}
                                     ${services.map(s => `<span>${s}</span>`).join('')}
                                 </div>
